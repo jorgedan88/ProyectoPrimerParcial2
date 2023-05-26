@@ -1,22 +1,33 @@
 html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+  font-size: 17px;
 }
 
 html {
   position: relative;
   min-height: 100%;
+  background-image: url(https://static.wixstatic.com/media/279b70_07d1f5ba938e4f0fa2fa745371a35533.jpg);
 }
 
 body {
   margin-bottom: 60px;
+  background-color: rgb(213, 212, 247);
+}
+
+header {
+  background-color: blue;
+  height: 100px;
+}
+
+p{
+  color: #000;
+}
+
+body {
+  /* font-family: 'Cascadia Code', Consolas, monospace; */
+  font-size: 1.1em;
+  font-family: sans-serif, Consolas;
+}
+
+.imagen-ajustada {
+  max-width: 100%;
 }

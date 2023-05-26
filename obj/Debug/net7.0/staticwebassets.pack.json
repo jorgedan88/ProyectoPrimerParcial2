@@ -1,8 +1,12 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\olive\\RepoIstea\\ProyectoPrimerParcial2\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\ProyectoPrimerParcial2.bundle.scp.css",
-      "PackagePath": "staticwebassets\\ProyectoPrimerParcial2.bundle.scp.css"
+      "Id": "C:\\Users\\olive\\RepoIstea\\ProyectoPrimerParcial2\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Test.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Test.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\olive\\RepoIstea\\ProyectoPrimerParcial2\\wwwroot\\css\\estilos.css",
+      "PackagePath": "staticwebassets\\css\\estilos.css"
     },
     {
       "Id": "C:\\Users\\olive\\RepoIstea\\ProyectoPrimerParcial2\\wwwroot\\css\\site.css",
@@ -245,20 +249,20 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.ProyectoPrimerParcial2.Microsoft.AspNetCore.StaticWebAssets.props",
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.Test.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
     {
-      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.ProyectoPrimerParcial2.props",
-      "PackagePath": "build\\ProyectoPrimerParcial2.props"
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.Test.props",
+      "PackagePath": "build\\Test.props"
     },
     {
-      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.ProyectoPrimerParcial2.props",
-      "PackagePath": "buildMultiTargeting\\ProyectoPrimerParcial2.props"
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.Test.props",
+      "PackagePath": "buildMultiTargeting\\Test.props"
     },
     {
-      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.ProyectoPrimerParcial2.props",
-      "PackagePath": "buildTransitive\\ProyectoPrimerParcial2.props"
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.Test.props",
+      "PackagePath": "buildTransitive\\Test.props"
     }
   ],
   "ElementsToRemove": []

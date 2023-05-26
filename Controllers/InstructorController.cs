@@ -8,13 +8,13 @@ using Microsoft.EntityFrameworkCore;
 using ProyectoPrimerParcial.Data;
 using ProyectoPrimerParcial.Models;
 
-namespace ProyectoPrimerParcial2.Controllers
+namespace Test.Controllers
 {
     public class InstructorController : Controller
     {
-        private readonly InstructorContext _context;
+        private readonly AeronaveContext _context;
 
-        public InstructorController(InstructorContext context)
+        public InstructorController(AeronaveContext context)
         {
             _context = context;
         }
@@ -22,9 +22,8 @@ namespace ProyectoPrimerParcial2.Controllers
         // GET: Instructor
         public async Task<IActionResult> Index()
         {
-              return _context.Instructor != null ? 
-                          View(await _context.Instructor.ToListAsync()) :
-                          Problem("Entity set 'InstructorContext.Instructor'  is null.");
+            var aeronaveContext = _context.Instructor.Include(i => i.Aeronave);
+            return View(await aeronaveContext.ToListAsync());
         }
 
         // GET: Instructor/Details/5
@@ -36,6 +35,7 @@ namespace ProyectoPrimerParcial2.Controllers
             }
 
             var instructor = await _context.Instructor
+                .Include(i => i.Aeronave)
                 .FirstOrDefaultAsync(m => m.InstructorId == id);
             if (instructor == null)
             {
@@ -48,6 +48,7 @@ namespace ProyectoPrimerParcial2.Controllers
         // GET: Instructor/Create
         public IActionResult Create()
         {
+            ViewData["AeronaveId"] = new SelectList(_context.Aeronave, "AeronaveId", "TipoAeronave");
             return View();
         }
 
@@ -56,7 +57,7 @@ namespace ProyectoPrimerParcial2.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("InstructorId,NombreInstructor,Apellido,DNI,LegajoVuelo")] Instructor instructor)
+        public async Task<IActionResult> Create([Bind("InstructorId,NombreInstructor,Apellido,DNI,LegajoVuelo,AeronaveId")] Instructor instructor)
         {
             if (ModelState.IsValid)
             {
@@ -64,6 +65,7 @@ namespace ProyectoPrimerParcial2.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["AeronaveId"] = new SelectList(_context.Aeronave, "AeronaveId", "TipoAeronave", instructor.AeronaveId);
             return View(instructor);
         }
 
@@ -80,6 +82,7 @@ namespace ProyectoPrimerParcial2.Controllers
             {
                 return NotFound();
             }
+            ViewData["AeronaveId"] = new SelectList(_context.Aeronave, "AeronaveId", "TipoAeronave", instructor.AeronaveId);
             return View(instructor);
         }
 
@@ -88,7 +91,7 @@ namespace ProyectoPrimerParcial2.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("InstructorId,NombreInstructor,Apellido,DNI,LegajoVuelo")] Instructor instructor)
+        public async Task<IActionResult> Edit(int id, [Bind("InstructorId,NombreInstructor,Apellido,DNI,LegajoVuelo,AeronaveId")] Instructor instructor)
         {
             if (id != instructor.InstructorId)
             {
@@ -115,6 +118,7 @@ namespace ProyectoPrimerParcial2.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["AeronaveId"] = new SelectList(_context.Aeronave, "AeronaveId", "TipoAeronave", instructor.AeronaveId);
             return View(instructor);
         }
 
@@ -127,6 +131,7 @@ namespace ProyectoPrimerParcial2.Controllers
             }
 
             var instructor = await _context.Instructor
+                .Include(i => i.Aeronave)
                 .FirstOrDefaultAsync(m => m.InstructorId == id);
             if (instructor == null)
             {
@@ -143,7 +148,7 @@ namespace ProyectoPrimerParcial2.Controllers
         {
             if (_context.Instructor == null)
             {
-                return Problem("Entity set 'InstructorContext.Instructor'  is null.");
+                return Problem("Entity set 'AeronaveContext.Instructor'  is null.");
             }
             var instructor = await _context.Instructor.FindAsync(id);
             if (instructor != null)

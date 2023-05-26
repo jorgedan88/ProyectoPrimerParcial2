@@ -4,9 +4,8 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<h1>Editar instructor</h1>
 
-<h4>Instructor</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -18,30 +17,40 @@
                 <input asp-for="NombreInstructor" class="form-control" />
                 <span asp-validation-for="NombreInstructor" class="text-danger"></span>
             </div>
+            <br>
             <div class="form-group">
                 <label asp-for="Apellido" class="control-label"></label>
                 <input asp-for="Apellido" class="form-control" />
                 <span asp-validation-for="Apellido" class="text-danger"></span>
             </div>
+            <br>
             <div class="form-group">
                 <label asp-for="DNI" class="control-label"></label>
                 <input asp-for="DNI" class="form-control" />
                 <span asp-validation-for="DNI" class="text-danger"></span>
             </div>
+            <br>
             <div class="form-group">
                 <label asp-for="LegajoVuelo" class="control-label"></label>
                 <input asp-for="LegajoVuelo" class="form-control" />
                 <span asp-validation-for="LegajoVuelo" class="text-danger"></span>
             </div>
+                        <br>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <label asp-for="AeronaveId" class="control-label"></label>
+                <select asp-for="AeronaveId" class="form-control" asp-items="ViewBag.AeronaveId"></select>
+            </div>
+            <br>
+            <div class="form-group">
+                <input type="submit" value="Guardar cambios" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
+<br>
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Menu principal</a>
 </div>
 
 @section Scripts {

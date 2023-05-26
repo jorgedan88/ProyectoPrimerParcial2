@@ -2,8 +2,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using ProyectoPrimerParcial.Data;
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<InstructorContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("InstructorContext") ?? throw new InvalidOperationException("Connection string 'InstructorContext' not found.")));
+builder.Services.AddDbContext<AeronaveContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("AeronaveContext") ?? throw new InvalidOperationException("Connection string 'AeronaveContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

@@ -25,5 +25,9 @@ namespace ProyectoPrimerParcial.Models
         [Display(Name = "Legajo")]
         public int LegajoVuelo {get; set;}
         
+        [Display(Name = "Aeronave")]
+        public int AeronaveId { get; set; }
+        public virtual Aeronave? Aeronave { get; set; }
+        
     }
 }

@@ -1,4 +1,4 @@
-namespace ProyectoPrimerParcial2.Models;
+namespace Test.Models;
 
 public class ErrorViewModel
 {
