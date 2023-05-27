@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "PL83crmahcNHdzj47u+olw936wyPAJri4CeMcH8K7NI=",
+  "Hash": "iJfwHPL3zZVNZbsT+jsHuLRJ2rS4+csRBJeEUymmQ7A=",
   "Source": "Test",
   "BasePath": "_content/Test",
   "Mode": "Default",
@@ -49,23 +49,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\olive\\RepoIstea\\ProyectoPrimerParcial2\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Test.bundle.scp.css"
-    },
-    {
-      "Identity": "C:\\Users\\olive\\RepoIstea\\ProyectoPrimerParcial2\\wwwroot\\css\\estilos.css",
-      "SourceId": "Test",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\olive\\RepoIstea\\ProyectoPrimerParcial2\\wwwroot\\",
-      "BasePath": "_content/Test",
-      "RelativePath": "css/estilos.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\estilos.css"
     },
     {
       "Identity": "C:\\Users\\olive\\RepoIstea\\ProyectoPrimerParcial2\\wwwroot\\css\\site.css",

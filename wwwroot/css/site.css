@@ -1,20 +1,19 @@
 html {
-  font-size: 17px;
-}
-
-html {
   position: relative;
   min-height: 100%;
   background-image: url(https://static.wixstatic.com/media/279b70_07d1f5ba938e4f0fa2fa745371a35533.jpg);
+  font-size: 17px;
 }
 
 body {
   margin-bottom: 60px;
   background-color: rgb(213, 212, 247);
+  font-size: 1.1em;
+  font-family: sans-serif, Consolas;
 }
 
 header {
-  background-color: blue;
+  background-color: rgb(255, 0, 13);
   height: 100px;
 }
 
@@ -22,12 +21,14 @@ p{
   color: #000;
 }
 
-body {
-  /* font-family: 'Cascadia Code', Consolas, monospace; */
-  font-size: 1.1em;
-  font-family: sans-serif, Consolas;
-}
-
 .imagen-ajustada {
   max-width: 100%;
+}
+
+div {
+  color: rgb(23, 18, 94);
+}
+
+nav {
+  color: blue;
 }
