@@ -7,7 +7,7 @@
 <h1>Aeronaves</h1>
 
 <p>
-    <a asp-action="Create">Nueva aeronave</a>
+    <a asp-action="Create" class="btn btn-success">+ Aeronave</a>
 </p>
 <table class="table">
     <thead>
@@ -25,9 +25,9 @@
                 @Html.DisplayFor(modelItem => item.TipoAeronave)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.AeronaveId">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.AeronaveId">Detalle</a> |
-                <a asp-action="Delete" asp-route-id="@item.AeronaveId">Eliminar</a>
+                <a asp-action="Edit" asp-route-id="@item.AeronaveId"class="btn btn-warning">Modificar</a> 
+                <a asp-action="Details" asp-route-id="@item.AeronaveId" class="btn btn-primary">Detalle</a> 
+                <a asp-action="Delete" asp-route-id="@item.AeronaveId"  class="btn btn-danger" onclick="return confirm('¿Esta seguro que quiere eliminar este instructor?')">Eliminar</a>
             </td>
         </tr>
 }

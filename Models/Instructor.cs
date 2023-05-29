@@ -22,12 +22,15 @@ namespace ProyectoPrimerParcial.Models
         public int DNI {get; set;}
 
         [Required(ErrorMessage ="Debe ingresar el Legajo de Vuelo del instructor")]
-        [Display(Name = "Legajo")]
+        [Display(Name = "Legajo de vuelo")]
         public int LegajoVuelo {get; set;}
         
         [Display(Name = "Aeronave")]
         public int AeronaveId { get; set; }
         public virtual Aeronave? Aeronave { get; set; }
+
+        [Display(Name = "En actividad")]
+        public bool EnActividad {get;set;}
         
     }
 }

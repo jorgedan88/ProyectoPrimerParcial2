@@ -9,8 +9,9 @@
 
 
 <p>
-    <a asp-action="Create">Crear Instructor</a>
+    <a asp-action="Create" class="btn btn-success"> + Instructor</a>
 </p>
+
 <table class="table">
     <thead>
         <tr>
@@ -51,9 +52,9 @@
                 @Html.DisplayFor(modelItem => item.Aeronave.TipoAeronave)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.InstructorId">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.InstructorId">Detalle</a> |
-                <a asp-action="Delete" asp-route-id="@item.InstructorId">Eliminar</a>
+                <a asp-action="Edit" asp-route-id="@item.InstructorId" class="btn btn-warning">Modificar</a> 
+                <a asp-action="Details" asp-route-id="@item.InstructorId" class="btn btn-primary">Detalle</a> 
+                <a asp-action="Delete" asp-route-id="@item.InstructorId"  class="btn btn-danger" onclick="return confirm('¿Esta seguro que quiere eliminar este instructor?')">Eliminar</a>
             </td>
         </tr>
 }

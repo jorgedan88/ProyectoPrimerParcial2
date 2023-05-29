@@ -35,6 +35,12 @@
                 <input asp-for="LegajoVuelo" class="form-control" />
                 <span asp-validation-for="LegajoVuelo" class="text-danger"></span>
             </div>
+                        <br>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="EnActividad" /> @Html.DisplayNameFor(model => model.EnActividad)
+                </label>
+            </div>
             <br>
             <div class="form-group">
                 <label asp-for="AeronaveId" class="control-label"></label>
@@ -42,7 +48,7 @@
             </div>
             <br>
             <div class="form-group">
-                <input type="submit" value="Crear" class="btn btn-primary" />
+                <input type="submit" value="Crear" class="btn btn-success" />
             </div>
 
         </form>
@@ -51,7 +57,7 @@
 
 <div><br>
 <br>
-    <a asp-action="Index">Menu principal</a>
+    <a asp-action="Index">Volver</a>
 </div>
 
 @section Scripts {

@@ -39,12 +39,20 @@
                 <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Aeronave.TipoAeronave)
         </dd>
+                <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EnActividad)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EnActividad)
+        </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.InstructorId">Editar</a>
+    <a asp-action="Edit" asp-route-id="@Model?.InstructorId" class="btn btn-warning">Editar</a>
 
     <br>
     <br> 
-    <a asp-action="Index">Menu principal</a>
+    <a asp-action="Index">Volver</a>
 </div>
+
+
