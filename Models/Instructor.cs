@@ -21,9 +21,15 @@ namespace ProyectoPrimerParcial.Models
         [Display(Name = "DNI")]
         public int DNI {get; set;}
 
-        [Required(ErrorMessage ="Debe ingresar el Legajo de Vuelo del instructor")]
-        [Display(Name = "Legajo de vuelo")]
+        [Required(ErrorMessage ="Debe ingresar el numero de la licencia")]
+        [Display(Name = "Numero")]
         public int LegajoVuelo {get; set;}
+
+        [Display(Name = "Tipo de licencia")]
+        public string TipoLicencia { get; set; }
+
+        [Display(Name = "Fecha expedicion")]
+        public DateTime FechaExpedicion {get;set;}
         
         [Display(Name = "Aeronave")]
         public int AeronaveId { get; set; }

@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProyectoPrimerParcial.Data;
 
@@ -10,9 +11,11 @@ using ProyectoPrimerParcial.Data;
 namespace Test.Migrations
 {
     [DbContext(typeof(AeronaveContext))]
-    partial class AeronaveContextModelSnapshot : ModelSnapshot
+    [Migration("20230529101207_Fabricacion")]
+    partial class Fabricacion
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.5");
@@ -54,17 +57,10 @@ namespace Test.Migrations
                     b.Property<bool>("EnActividad")
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateTime>("FechaExpedicion")
-                        .HasColumnType("TEXT");
-
                     b.Property<int>("LegajoVuelo")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("NombreInstructor")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("TipoLicencia")
                         .IsRequired()
                         .HasColumnType("TEXT");
 

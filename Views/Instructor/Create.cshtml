@@ -4,7 +4,7 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Crear nuevo instructor</h1>
+<h1>Crear instructor</h1>
 
 <hr />
 <div class="row">
@@ -23,19 +23,32 @@
                 <input asp-for="Apellido" class="form-control" />
                 <span asp-validation-for="Apellido" class="text-danger"></span>
             </div>
-             <br>
+            <br>
             <div class="form-group">
                 <label asp-for="DNI" class="control-label"></label>
                 <input asp-for="DNI" class="form-control" />
                 <span asp-validation-for="DNI" class="text-danger"></span>
             </div>
+             <br>
+            <select class="form-select" aria-label="Default select example">
+            <label asp-for="TipoLicencia" class="control-label"></label>
+            <option selected>Tipo de Licencia aeronautica</option>
+            <option value="1">Comercial</option>
+            <option value="2">Carga</option>
+            <option value="3">Militar</option>
+            </select>            
             <br>
             <div class="form-group">
                 <label asp-for="LegajoVuelo" class="control-label"></label>
                 <input asp-for="LegajoVuelo" class="form-control" />
                 <span asp-validation-for="LegajoVuelo" class="text-danger"></span>
             </div>
-                        <br>
+            <br>
+            <div class="form-group">
+            <label class="form-label" >Fecha de expedicion</label>
+            <input class="form-control" asp-for="FechaExpedicion" />
+            </div>
+            <br>
             <div class="form-group form-check">
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="EnActividad" /> @Html.DisplayNameFor(model => model.EnActividad)

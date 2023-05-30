@@ -31,15 +31,28 @@
             </div>
             <br>
             <div class="form-group">
+                <label asp-for="TipoLicencia" class="control-label"></label>
+                <input asp-for="TipoLicencia" class="form-control" />
+                <span asp-validation-for="TipoLicencia" class="text-danger"></span>
+            </div>
+            <br>
+            <div class="form-group">
                 <label asp-for="LegajoVuelo" class="control-label"></label>
                 <input asp-for="LegajoVuelo" class="form-control" />
                 <span asp-validation-for="LegajoVuelo" class="text-danger"></span>
             </div>
-                        <br>
+            <br>
             <div class="form-group">
-                <label asp-for="AeronaveId" class="control-label"></label>
-                <select asp-for="AeronaveId" class="form-control" asp-items="ViewBag.AeronaveId"></select>
+                <label asp-for="FechaExpedicion" class="control-label"></label>
+                <input asp-for="FechaExpedicion" class="form-control" />
+                <span asp-validation-for="FechaExpedicion" class="text-danger"></span>
             </div>
+            <br>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                <input class="form-check-input" asp-for="EnActividad" /> @Html.DisplayNameFor(model => model.EnActividad)
+                </label>
+            <br>
             <br>
             <div class="form-group">
                 <input type="submit" value="Guardar cambios" class="btn btn-success" />

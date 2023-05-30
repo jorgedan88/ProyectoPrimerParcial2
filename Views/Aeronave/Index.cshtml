@@ -15,7 +15,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.TipoAeronave)
             </th>
-            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaFabricacion)
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -23,6 +25,9 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.TipoAeronave)
+            </td>
+                        <td>
+                @Html.DisplayFor(modelItem => item.FechaFabricacion)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.AeronaveId"class="btn btn-warning">Modificar</a> 
