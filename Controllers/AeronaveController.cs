@@ -22,9 +22,9 @@ namespace Test.Controllers
         // GET: Aeronave
         public async Task<IActionResult> Index()
         {
-              return _context.Aeronave != null ? 
-                          View(await _context.Aeronave.ToListAsync()) :
-                          Problem("Entity set 'AeronaveContext.Aeronave'  is null.");
+            return _context.Aeronave != null ? 
+                        View(await _context.Aeronave.ToListAsync()) :
+                        Problem("Entity set 'AeronaveContext.Aeronave'  is null.");
         }
 
         // GET: Aeronave/Details/5
@@ -56,7 +56,7 @@ namespace Test.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("AeronaveId,TipoAeronave")] Aeronave aeronave)
+        public async Task<IActionResult> Create([Bind("AeronaveId,TipoAeronave,FechaFabricacion")] Aeronave aeronave)
         {
             if (ModelState.IsValid)
             {
@@ -157,7 +157,7 @@ namespace Test.Controllers
 
         private bool AeronaveExists(int id)
         {
-          return (_context.Aeronave?.Any(e => e.AeronaveId == id)).GetValueOrDefault();
+            return (_context.Aeronave?.Any(e => e.AeronaveId == id)).GetValueOrDefault();
         }
     }
 }
