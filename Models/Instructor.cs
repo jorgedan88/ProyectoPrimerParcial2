@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using ProyectoPrimerParcial2.Utils;
 
 
 namespace ProyectoPrimerParcial.Models
@@ -24,17 +25,17 @@ namespace ProyectoPrimerParcial.Models
 
         [Required(ErrorMessage ="Debe ingresar el tipo de licencia")]
         [Display(Name = "Tipo de licencia")]
-        public string? TipoLicencia { get; set; }
+        public LicenciaType TipoLicencia { get; set; }
 
         [Required(ErrorMessage ="Debe ingresar el numero de la licencia")]
         [Display(Name = "Numero")]
-        public int LegajoVuelo {get; set;}
+        public int NumeroLicencia {get; set;}
 
         [Display(Name = "Fecha expedicion")]
         public DateTime FechaExpedicion {get;set;}
 
         [Display(Name = "En actividad")]
-        public bool EnActividad {get;set;}
+        public bool EnActividad {get;set;} = true;
 
         [Display(Name = "Aeronave")]
         public int AeronaveId { get; set; }

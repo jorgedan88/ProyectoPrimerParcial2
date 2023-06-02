@@ -30,16 +30,18 @@
                 <span asp-validation-for="DNI" class="text-danger"></span>
             </div>
             <br>
-            <div class="form-group">
-                <label asp-for="TipoLicencia" class="control-label"></label>
-                <input asp-for="TipoLicencia" class="form-control" />
-                <span asp-validation-for="TipoLicencia" class="text-danger"></span>
-            </div>
+            <label asp-for="TipoLicencia" class="control-label"></label>
+            <select asp-for="TipoLicencia" class="form-control">
+            <option value="0">Comercial</option>
+            <option value="1">Carga</option>
+            <option value="2">Militar</option>
+            </select>            
+            <br> 
             <br>
             <div class="form-group">
-                <label asp-for="LegajoVuelo" class="control-label"></label>
-                <input asp-for="LegajoVuelo" class="form-control" />
-                <span asp-validation-for="LegajoVuelo" class="text-danger"></span>
+                <label asp-for="NumeroLicencia" class="control-label"></label>
+                <input asp-for="NumeroLicencia" class="form-control" />
+                <span asp-validation-for="NumeroLicencia" class="text-danger"></span>
             </div>
             <br>
             <div class="form-group">

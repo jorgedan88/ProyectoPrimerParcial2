@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using ProyectoPrimerParcial.Data;
 using ProyectoPrimerParcial.Models;
 
+
 namespace Test.Controllers
 {
     public class InstructorController : Controller
@@ -57,7 +58,7 @@ namespace Test.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("InstructorId,NombreInstructor,Apellido,DNI,LegajoVuelo,AeronaveId,TipoLicencia,FechaExpedicion,EnActividad")] Instructor instructor)
+        public async Task<IActionResult> Create([Bind("InstructorId,NombreInstructor,Apellido,DNI,TipoLicencia,NumeroLicencia,FechaExpedicion,EnActividad,AeronaveId")] Instructor instructor)
         {
             if (ModelState.IsValid)
             {
@@ -65,7 +66,7 @@ namespace Test.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AeronaveId"] = new SelectList(_context.Aeronave, "AeronaveId", "TipoAeronave", instructor.AeronaveId);
+            ViewData["AeronaveId"] = new SelectList(_context.Aeronave, "AeronaveId", "TipoAeronave",  instructor.AeronaveId);
             return View(instructor);
         }
 
@@ -91,7 +92,7 @@ namespace Test.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("InstructorId,NombreInstructor,Apellido,DNI,LegajoVuelo,AeronaveId,TipoLicencia,FechaExpedicion,EnActividad")] Instructor instructor)
+        public async Task<IActionResult> Edit(int id, [Bind("InstructorId,NombreInstructor,Apellido,DNI,TipoLicencia,NumeroLicencia,FechaExpedicion,EnActividad,AeronaveId")] Instructor instructor)
         {
             if (id != instructor.InstructorId)
             {

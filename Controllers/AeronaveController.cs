@@ -88,7 +88,7 @@ namespace Test.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("AeronaveId,TipoAeronave")] Aeronave aeronave)
+        public async Task<IActionResult> Edit(int id, [Bind("AeronaveId,TipoAeronave,FechaFabricacion")] Aeronave aeronave)
         {
             if (id != aeronave.AeronaveId)
             {
