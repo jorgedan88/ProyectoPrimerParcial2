@@ -55,6 +55,12 @@
             <br>
             <br>
             <div class="form-group">
+                <label asp-for="AeronaveId" class="control-label"></label>
+                <select asp-for="AeronaveId" class="form-control" asp-items="ViewBag.AeronaveId"></select>
+            </div> 
+            <br>
+            <br>           
+            <div class="form-group">
                 <input type="submit" value="Guardar cambios" class="btn btn-success" />
             </div>
         </form>
