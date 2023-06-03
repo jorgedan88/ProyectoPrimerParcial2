@@ -1,4 +1,5 @@
-@model IEnumerable<ProyectoPrimerParcial.Models.Instructor>
+@using ProyectoPrimerParcial2.ViewModels;
+@model InstructorViewmodels
 
 @{
     ViewData["Title"] = "Index";
@@ -12,38 +13,48 @@
     <a asp-action="Create" class="btn btn-success"> + Instructor</a>
 </p>
 
+<div class="row">
+    <form method="get" asp-action="Index" asp-controller="Instructor">
+        <div class="col-6 form-group">
+            <input class="form-control" asp-for="NameFilterIns"/>
+        </div>
+        <br>
+        <button class="btn btn-info" type="submit">Buscar</button>
+    </form>
+</div>
+
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.NombreInstructor)
+                @Html.DisplayNameFor(model => model.instructors.FirstOrDefault().NombreInstructor)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Apellido)
+                @Html.DisplayNameFor(model => model.instructors.FirstOrDefault().Apellido)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DNI)
+                @Html.DisplayNameFor(model => model.instructors.FirstOrDefault().DNI)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TipoLicencia)
+                @Html.DisplayNameFor(model => model.instructors.FirstOrDefault().TipoLicencia)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.NumeroLicencia)
+                @Html.DisplayNameFor(model => model.instructors.FirstOrDefault().NumeroLicencia)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FechaExpedicion)
+                @Html.DisplayNameFor(model => model.instructors.FirstOrDefault().FechaExpedicion)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.EnActividad)
+                @Html.DisplayNameFor(model => model.instructors.FirstOrDefault().EnActividad)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.AeronaveId)
+                @Html.DisplayNameFor(model => model.instructors.FirstOrDefault().AeronaveId)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model.instructors) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.NombreInstructor)

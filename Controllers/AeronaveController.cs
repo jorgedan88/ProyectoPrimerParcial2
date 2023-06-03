@@ -32,9 +32,7 @@ namespace Test.Controllers
 
             var model = new AeronaveViewmodels();
             model.aeronaves =await query.ToListAsync();
-
-
-
+            
             return _context.Aeronave != null ?
             View(model):
             Problem("Entity set 'AeronaveContex.Aeronave' is null.");

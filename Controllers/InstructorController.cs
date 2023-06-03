@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ProyectoPrimerParcial.Data;
 using ProyectoPrimerParcial.Models;
+using ProyectoPrimerParcial2.ViewModels;
 
 
 namespace Test.Controllers
@@ -21,10 +22,22 @@ namespace Test.Controllers
         }
 
         // GET: Instructor
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string nameFilterIns)
         {
-            var aeronaveContext = _context.Instructor.Include(i => i.Aeronave);
-            return View(await aeronaveContext.ToListAsync());
+            var query = from instructor in _context.Instructor select instructor;
+
+            if (!string.IsNullOrEmpty(nameFilterIns))
+            {
+                query = query.Where(x => x.NombreInstructor.Contains(nameFilterIns));
+            }
+
+            var model = new InstructorViewmodels();
+            model.instructors =await query.ToListAsync();
+            
+            return _context.Aeronave != null ?
+            View(model):
+            Problem("Entity set 'AeronaveContex.Aeronave' is null.");
+
         }
 
         // GET: Instructor/Details/5
