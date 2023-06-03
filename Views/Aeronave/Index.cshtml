@@ -1,4 +1,5 @@
-@model IEnumerable<ProyectoPrimerParcial.Models.Aeronave>
+@using ProyectoPrimerParcial2.ViewModels;
+@model AeronaveViewmodels
 
 @{
     ViewData["Title"] = "Index";
@@ -9,19 +10,31 @@
 <p>
     <a asp-action="Create" class="btn btn-success">+ Aeronave</a>
 </p>
+
+<div class="row">
+    <form method="get" asp-action="Index" asp-controller="Aeronave">
+        <div class="col-6 form-group">
+            <input class="form-control" asp-for="NameFilter" />
+        </div>
+        <br>
+        <button class="btn btn-info" type="submit">Buscar</button>
+    </form>
+</div>
+
+
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.TipoAeronave)
+                @Html.DisplayNameFor(model => model.aeronaves.FirstOrDefault().TipoAeronave)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FechaFabricacion)
+                @Html.DisplayNameFor(model => model.aeronaves.FirstOrDefault().FechaFabricacion)
             </th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model.aeronaves) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.TipoAeronave)
