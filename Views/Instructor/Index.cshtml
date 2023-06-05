@@ -1,5 +1,5 @@
 @using ProyectoPrimerParcial2.ViewModels;
-@model InstructorViewmodels
+@model InstructorViewmodels;
 
 @{
     ViewData["Title"] = "Index";
@@ -27,28 +27,28 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.instructors.FirstOrDefault().NombreInstructor)
+                @Html.DisplayNameFor(model => model.instructors[0].NombreInstructor)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.instructors.FirstOrDefault().Apellido)
+                @Html.DisplayNameFor(model => model.instructors[0].Apellido)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.instructors.FirstOrDefault().DNI)
+                @Html.DisplayNameFor(model => model.instructors[0].DNI)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.instructors.FirstOrDefault().TipoLicencia)
+                @Html.DisplayNameFor(model => model.instructors[0].TipoLicencia)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.instructors.FirstOrDefault().NumeroLicencia)
+                @Html.DisplayNameFor(model => model.instructors[0].NumeroLicencia)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.instructors.FirstOrDefault().FechaExpedicion)
+                @Html.DisplayNameFor(model => model.instructors[0].FechaExpedicion)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.instructors.FirstOrDefault().EnActividad)
+                @Html.DisplayNameFor(model => model.instructors[0].EnActividad)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.instructors.FirstOrDefault().AeronaveId)
+                @Html.DisplayNameFor(model => model.instructors[0].AeronaveId)
             </th>
             <th></th>
         </tr>
@@ -78,7 +78,7 @@
                 @Html.DisplayFor(modelItem => item.EnActividad)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Aeronave.TipoAeronave)
+                @Html.DisplayFor(modelItem => item.InstructorId)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.InstructorId" class="btn btn-warning">Modificar</a> 
