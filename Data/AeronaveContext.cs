@@ -17,5 +17,7 @@ namespace ProyectoPrimerParcial.Data
         public DbSet<ProyectoPrimerParcial.Models.Aeronave> Aeronave { get; set; } = default!;
 
         public DbSet<ProyectoPrimerParcial.Models.Instructor> Instructor { get; set; } = default!;
+
+        public DbSet<ProyectoPrimerParcial.Models.Hangar> Hangar { get; set; } = default!;
     }
 }

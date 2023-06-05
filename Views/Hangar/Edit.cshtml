@@ -1,0 +1,49 @@
+@model ProyectoPrimerParcial.Models.Hangar
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Hangar</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="HangarId" />
+            <div class="form-group">
+                <label asp-for="NombreHangar" class="control-label"></label>
+                <input asp-for="NombreHangar" class="form-control" />
+                <span asp-validation-for="NombreHangar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sector" class="control-label"></label>
+                <select asp-for="Sector" class="form-control"></select>
+                <span asp-validation-for="Sector" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="AptoMantenimiento" /> @Html.DisplayNameFor(model => model.AptoMantenimiento)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="oficinas" /> @Html.DisplayNameFor(model => model.oficinas)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

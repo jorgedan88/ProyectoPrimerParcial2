@@ -1,0 +1,53 @@
+@model IEnumerable<ProyectoPrimerParcial.Models.Hangar>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreHangar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sector)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AptoMantenimiento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.oficinas)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreHangar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sector)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AptoMantenimiento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.oficinas)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.HangarId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.HangarId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.HangarId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
