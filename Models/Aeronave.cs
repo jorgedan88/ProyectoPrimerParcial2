@@ -13,5 +13,7 @@ namespace ProyectoPrimerParcial.Models
         [Display(Name = "Tipo de aeronave")]
         public string? TipoAeronave {get; set;}
         public ICollection<Instructor> InstructorList { get; set; } = new List<Instructor>();
+
+        public ICollection<Hangar> HangarList { get; set; } = new List<Hangar>();
     }
 }
