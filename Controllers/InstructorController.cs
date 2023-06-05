@@ -24,7 +24,7 @@ namespace Test.Controllers
         // GET: Instructor
         public async Task<IActionResult> Index(string nameFilterIns)
         {
-            var query = from instructor in _context.Instructor select instructor;
+            var query = from instructor in _context.Instructor.Include(i => i.Aeronave) select instructor;
 
             if (!string.IsNullOrEmpty(nameFilterIns))
             {
@@ -62,7 +62,7 @@ namespace Test.Controllers
         // GET: Instructor/Create
         public IActionResult Create()
         {
-            ViewData["AeronaveId"] = new SelectList(_context.Aeronave, "AeronaveId", "TipoAeronave");
+            ViewData["AeronaveId"] = new SelectList(_context.Aeronave, "AeronaveId", "TipoAeronave",  "instructor.AeronaveId");
             return View();
         }
 
@@ -79,7 +79,7 @@ namespace Test.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AeronaveId"] = new SelectList(_context.Aeronave, "AeronaveId", "TipoAeronave",  instructor.AeronaveId);
+            ViewData["AeronaveId"] = new SelectList(_context.Aeronave, "AeronaveId", "TipoAeronave",  "instructor.AeronaveId");
             return View(instructor);
         }
 

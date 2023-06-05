@@ -48,7 +48,7 @@
                 @Html.DisplayNameFor(model => model.instructors[0].EnActividad)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.instructors[0].AeronaveId)
+                @Html.DisplayNameFor(model => model.instructors[0].Aeronave.TipoAeronave)
             </th>
             <th></th>
         </tr>
@@ -78,7 +78,7 @@
                 @Html.DisplayFor(modelItem => item.EnActividad)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.InstructorId)
+                @Html.DisplayFor(modelItem => item.Aeronave.TipoAeronave)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.InstructorId" class="btn btn-warning">Modificar</a> 
