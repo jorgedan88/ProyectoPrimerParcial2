@@ -1,4 +1,5 @@
-@model IEnumerable<ProyectoPrimerParcial.Models.Hangar>
+@using ProyectoPrimerParcial2.ViewModels;
+@model HangarViewmodels;
 
 @{
     ViewData["Title"] = "Index";
@@ -14,22 +15,25 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.NombreHangar)
+                @Html.DisplayNameFor(model => model.hangars[0].NombreHangar)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Sector)
+                @Html.DisplayNameFor(model => model.hangars[0].Sector)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.AptoMantenimiento)
+                @Html.DisplayNameFor(model => model.hangars[0].AptoMantenimiento)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.oficinas)
+                @Html.DisplayNameFor(model => model.hangars[0].oficinas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hangars[0].Aeronaves)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model.hangars) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.NombreHangar)
@@ -42,6 +46,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.oficinas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Aeronaves)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.HangarId"class="btn btn-warning">Modificar</a> 

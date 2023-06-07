@@ -41,6 +41,12 @@
                     <input class="form-check-input" asp-for="oficinas" /> @Html.DisplayNameFor(model => model.oficinas)
                 </label>
             </div>
+            <br>
+            <div class="form-group">
+                <label asp-for="Aeronaves" class="control-label"></label>
+                <select asp-for="Aeronaves" class="form-control" asp-items="ViewBag.Aeronaves"></select>
+            </div>
+            <br>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>

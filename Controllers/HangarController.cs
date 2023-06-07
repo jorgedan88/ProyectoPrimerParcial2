@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ProyectoPrimerParcial.Data;
 using ProyectoPrimerParcial.Models;
+using ProyectoPrimerParcial2.ViewModels;
+
 
 namespace Test.Controllers
 {
@@ -20,12 +22,29 @@ namespace Test.Controllers
         }
 
         // GET: Hangar
-        public async Task<IActionResult> Index()
+        // public async Task<IActionResult> Index()
+        // {
+        //       return _context.Hangar != null ? 
+        //                   View(await _context.Hangar.ToListAsync()) :
+        //                   Problem("Entity set 'AeronaveContext.Hangar'  is null.");
+
+        public async Task<IActionResult> Index(string nameFilterHan)
         {
-              return _context.Hangar != null ? 
-                          View(await _context.Hangar.ToListAsync()) :
-                          Problem("Entity set 'AeronaveContext.Hangar'  is null.");
+            var query = from hangar in _context.Hangar.Include(i => i.Aeronaves) select hangar;
+
+            if (!string.IsNullOrEmpty(nameFilterHan))
+            {
+                query = query.Where(x => x.NombreHangar.Contains(nameFilterHan));
+            }
+
+            var model = new HangarViewmodels();
+            model.hangars =await query.ToListAsync();
+            
+            return _context.Aeronave != null ?
+            View(model):
+            Problem("Entity set 'AeronaveContex.Aeronave' is null.");
         }
+        // }
 
         // GET: Hangar/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -48,6 +67,7 @@ namespace Test.Controllers
         // GET: Hangar/Create
         public IActionResult Create()
         {
+            ViewData["Aeronaves"] = new SelectList(_context.Aeronave, "AeronaveId", "TipoAeronave",  "instructor.AeronaveId");
             return View();
         }
 
@@ -56,7 +76,7 @@ namespace Test.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("HangarId,NombreHangar,Sector,AptoMantenimiento,oficinas")] Hangar hangar)
+        public async Task<IActionResult> Create([Bind("HangarId,NombreHangar,Sector,AptoMantenimiento,oficinas,Aeronaves")] Hangar hangar)
         {
             if (ModelState.IsValid)
             {
@@ -64,6 +84,7 @@ namespace Test.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["Aeronaves"] = new SelectList(_context.Aeronave, "AeronaveId", "TipoAeronave",  "instructor.AeronaveId");
             return View(hangar);
         }
 
@@ -80,7 +101,10 @@ namespace Test.Controllers
             {
                 return NotFound();
             }
-            return View(hangar);
+
+            ViewData["Aeronaves"] = new SelectList(_context.Aeronave, "AeronaveId", "TipoAeronave",  "instructor.AeronaveId");
+            return View();
+
         }
 
         // POST: Hangar/Edit/5
@@ -88,7 +112,7 @@ namespace Test.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("HangarId,NombreHangar,Sector,AptoMantenimiento,oficinas")] Hangar hangar)
+        public async Task<IActionResult> Edit(int id, [Bind("HangarId,NombreHangar,Sector,AptoMantenimiento,oficinas,Aeronaves")] Hangar hangar)
         {
             if (id != hangar.HangarId)
             {
