@@ -20,6 +20,7 @@ namespace ProyectoPrimerParcial.Models
 
         [Display(Name = "Cuenta con oficinas?")]
         public bool oficinas {get;set;} = true;
-        public ICollection<Aeronave> AeronaveList { get; set; } = new List<Aeronave>();
+        public virtual List<Aeronave> Aeronaves { get; set; }
+
     }
 }
