@@ -101,9 +101,13 @@ namespace Test.Controllers
             {
                 return NotFound();
             }
+        
+
+
+
 
             ViewData["Aeronaves"] = new SelectList(_context.Aeronave, "AeronaveId", "TipoAeronave",  "instructor.AeronaveId");
-            return View();
+            return View(hangar);
 
         }
 
