@@ -22,9 +22,9 @@ namespace Test.Controllers
         // GET: Hangar
         public async Task<IActionResult> Index()
         {
-              return _context.Hangar != null ? 
-                          View(await _context.Hangar.ToListAsync()) :
-                          Problem("Entity set 'AeronaveContext.Hangar'  is null.");
+            return _context.Hangar != null ? 
+                        View(await _context.Hangar.ToListAsync()) :
+                        Problem("Entity set 'AeronaveContext.Hangar'  is null.");
         }
 
         // GET: Hangar/Details/5
@@ -48,6 +48,7 @@ namespace Test.Controllers
         // GET: Hangar/Create
         public IActionResult Create()
         {
+            ViewData["Aeronaves"] = new SelectList(_context.Aeronave, "AeronaveId", "TipoAeronave",  "instructor.AeronaveId");
             return View();
         }
 
@@ -80,6 +81,7 @@ namespace Test.Controllers
             {
                 return NotFound();
             }
+            ViewData["Aeronaves"] = new SelectList(_context.Aeronave, "AeronaveId", "TipoAeronave",  "instructor.AeronaveId");
             return View(hangar);
         }
 
