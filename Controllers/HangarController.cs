@@ -57,7 +57,7 @@ namespace Test.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("HangarId,NombreHangar,Sector,AptoMantenimiento,oficinas")] Hangar hangar)
+        public async Task<IActionResult> Create([Bind("HangarId,NombreHangar,Sector,AptoMantenimiento,oficinas,Aeronaves")] Hangar hangar)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +90,7 @@ namespace Test.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("HangarId,NombreHangar,Sector,AptoMantenimiento,oficinas")] Hangar hangar)
+        public async Task<IActionResult> Edit(int id, [Bind("HangarId,NombreHangar,Sector,AptoMantenimiento,oficinas,Aeronaves")] Hangar hangar)
         {
             if (id != hangar.HangarId)
             {
