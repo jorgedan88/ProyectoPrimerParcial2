@@ -9,97 +9,97 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Test
 build_property.RootNamespace = Test
-build_property.ProjectDir = C:\Users\olive\RepoIstea\ProyectoPrimerParcial2\
+build_property.ProjectDir = c:\Users\olive\RepoIstea\ID\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\olive\RepoIstea\ProyectoPrimerParcial2
+build_property.MSBuildProjectDirectory = c:\Users\olive\RepoIstea\ID
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/olive/RepoIstea/ProyectoPrimerParcial2/Views/Aeronave/Create.cshtml]
+[c:/Users/olive/RepoIstea/ID/Views/Aeronave/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWVyb25hdmVcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/olive/RepoIstea/ProyectoPrimerParcial2/Views/Aeronave/Delete.cshtml]
+[c:/Users/olive/RepoIstea/ID/Views/Aeronave/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWVyb25hdmVcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/olive/RepoIstea/ProyectoPrimerParcial2/Views/Aeronave/Details.cshtml]
+[c:/Users/olive/RepoIstea/ID/Views/Aeronave/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWVyb25hdmVcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/olive/RepoIstea/ProyectoPrimerParcial2/Views/Aeronave/Edit.cshtml]
+[c:/Users/olive/RepoIstea/ID/Views/Aeronave/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWVyb25hdmVcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/olive/RepoIstea/ProyectoPrimerParcial2/Views/Aeronave/Index.cshtml]
+[c:/Users/olive/RepoIstea/ID/Views/Aeronave/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWVyb25hdmVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/olive/RepoIstea/ProyectoPrimerParcial2/Views/Hangar/Create.cshtml]
+[c:/Users/olive/RepoIstea/ID/Views/Hangar/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGFuZ2FyXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/olive/RepoIstea/ProyectoPrimerParcial2/Views/Hangar/Delete.cshtml]
+[c:/Users/olive/RepoIstea/ID/Views/Hangar/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGFuZ2FyXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/olive/RepoIstea/ProyectoPrimerParcial2/Views/Hangar/Details.cshtml]
+[c:/Users/olive/RepoIstea/ID/Views/Hangar/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGFuZ2FyXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/olive/RepoIstea/ProyectoPrimerParcial2/Views/Hangar/Edit.cshtml]
+[c:/Users/olive/RepoIstea/ID/Views/Hangar/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGFuZ2FyXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/olive/RepoIstea/ProyectoPrimerParcial2/Views/Hangar/Index.cshtml]
+[c:/Users/olive/RepoIstea/ID/Views/Hangar/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGFuZ2FyXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/olive/RepoIstea/ProyectoPrimerParcial2/Views/Home/Index.cshtml]
+[c:/Users/olive/RepoIstea/ID/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/olive/RepoIstea/ProyectoPrimerParcial2/Views/Home/Privacy.cshtml]
+[c:/Users/olive/RepoIstea/ID/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/olive/RepoIstea/ProyectoPrimerParcial2/Views/Instructor/Create.cshtml]
+[c:/Users/olive/RepoIstea/ID/Views/Instructor/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/olive/RepoIstea/ProyectoPrimerParcial2/Views/Instructor/Delete.cshtml]
+[c:/Users/olive/RepoIstea/ID/Views/Instructor/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/olive/RepoIstea/ProyectoPrimerParcial2/Views/Instructor/Details.cshtml]
+[c:/Users/olive/RepoIstea/ID/Views/Instructor/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/olive/RepoIstea/ProyectoPrimerParcial2/Views/Instructor/Edit.cshtml]
+[c:/Users/olive/RepoIstea/ID/Views/Instructor/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/olive/RepoIstea/ProyectoPrimerParcial2/Views/Instructor/Index.cshtml]
+[c:/Users/olive/RepoIstea/ID/Views/Instructor/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/olive/RepoIstea/ProyectoPrimerParcial2/Views/Shared/Error.cshtml]
+[c:/Users/olive/RepoIstea/ID/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/olive/RepoIstea/ProyectoPrimerParcial2/Views/Shared/_ValidationScriptsPartial.cshtml]
+[c:/Users/olive/RepoIstea/ID/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/olive/RepoIstea/ProyectoPrimerParcial2/Views/_ViewImports.cshtml]
+[c:/Users/olive/RepoIstea/ID/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/olive/RepoIstea/ProyectoPrimerParcial2/Views/_ViewStart.cshtml]
+[c:/Users/olive/RepoIstea/ID/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/olive/RepoIstea/ProyectoPrimerParcial2/Views/Shared/_Layout.cshtml]
+[c:/Users/olive/RepoIstea/ID/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-zz1b99kxi4
