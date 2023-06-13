@@ -4,7 +4,7 @@ using ProyectoPrimerParcial.Models;
 
 namespace ProyectoPrimerParcial2.ViewModels;
 
-public class AeronaveViewmodels
+public class AeronaveIndexViewmodels
 
 {
     public List<Aeronave> aeronaves {get; set; } = new List<Aeronave>();

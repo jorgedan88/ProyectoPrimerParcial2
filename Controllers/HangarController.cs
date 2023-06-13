@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ProyectoPrimerParcial.Data;
 using ProyectoPrimerParcial.Models;
+using ProyectoPrimerParcial.ViewModels;
 
 namespace Test.Controllers
 {
@@ -57,15 +58,22 @@ namespace Test.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("HangarId,NombreHangar,Sector,AptoMantenimiento,oficinas,Aeronaves")] Hangar hangar)
+        public async Task<IActionResult> Create([Bind("HangarId,NombreHangar,Sector,AptoMantenimiento,oficinas,Aeronaves")] HangarCreateViewModel hangarView)
         {
             if (ModelState.IsValid)
             {
+                var hangar = new Hangar{
+                    NombreHangar = hangarView.NombreHangar,
+                    Sector = hangarView.Sector,
+                    AptoMantenimiento = hangarView.AptoMantenimiento,
+                    oficinas = hangarView.oficinas,
+                    Aeronaves = hangarView.Aeronaves
+                };
                 _context.Add(hangar);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(hangar);
+            return View(hangarView);
         }
 
         // GET: Hangar/Edit/5

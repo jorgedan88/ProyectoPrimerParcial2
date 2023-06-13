@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ProyectoPrimerParcial.Data;
 using ProyectoPrimerParcial.Models;
+using ProyectoPrimerParcial.ViewModels;
 using ProyectoPrimerParcial2.ViewModels;
 
 
@@ -71,16 +72,27 @@ namespace Test.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("InstructorId,NombreInstructor,Apellido,DNI,TipoLicencia,NumeroLicencia,FechaExpedicion,EnActividad,AeronaveId")] Instructor instructor)
+        public async Task<IActionResult> Create([Bind("InstructorId,NombreInstructor,Apellido,DNI,TipoLicencia,NumeroLicencia,FechaExpedicion,EnActividad,AeronaveId")] InstructorCreateViewModel instructorView)
         {
             if (ModelState.IsValid)
             {
+                var instructor = new Instructor{
+                    NombreInstructor = instructorView.NombreInstructor,
+                    Apellido = instructorView.Apellido,
+                    DNI = instructorView.DNI,
+                    TipoLicencia = instructorView.TipoLicencia,
+                    NumeroLicencia = instructorView.NumeroLicencia,
+                    FechaExpedicion = instructorView.FechaExpedicion,
+                    EnActividad = instructorView.EnActividad,
+                    AeronaveId = instructorView.AeronaveId
+                    
+                };
                 _context.Add(instructor);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AeronaveId"] = new SelectList(_context.Aeronave, "AeronaveId", "TipoAeronave",  "instructor.AeronaveId");
-            return View(instructor);
+            // ViewData["AeronaveId"] = new SelectList(_context.Aeronave, "AeronaveId", "TipoAeronave",  "instructor.AeronaveId");
+            return View(instructorView);
         }
 
         // GET: Instructor/Edit/5

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ProyectoPrimerParcial.Data;
 using ProyectoPrimerParcial.Models;
+using ProyectoPrimerParcial.ViewModels;
 using ProyectoPrimerParcial2.ViewModels;
 
 namespace Test.Controllers
@@ -30,7 +31,7 @@ namespace Test.Controllers
                 query = query.Where(x => x.TipoAeronave.Contains(nameFilter));
             }
 
-            var model = new AeronaveViewmodels();
+            var model = new AeronaveIndexViewmodels();
             model.aeronaves =await query.ToListAsync();
             
             return _context.Aeronave != null ?
@@ -55,6 +56,7 @@ namespace Test.Controllers
             {
                 return NotFound();
             }
+            
 
             return View(aeronave);
         }
@@ -70,15 +72,19 @@ namespace Test.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("AeronaveId,TipoAeronave,FechaFabricacion")] Aeronave aeronave)
+        public async Task<IActionResult> Create([Bind("TipoAeronave,FechaFabricacion")] AeronaveCreateViewModel aeronaveView)
         {
             if (ModelState.IsValid)
             {
+                var aeronave = new Aeronave{
+                    FechaFabricacion = aeronaveView.FechaFabricacion,
+                    TipoAeronave = aeronaveView.TipoAeronave,
+                };
                 _context.Add(aeronave);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(aeronave);
+            return View(aeronaveView);
         }
 
         // GET: Aeronave/Edit/5
@@ -102,23 +108,27 @@ namespace Test.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("AeronaveId,TipoAeronave,FechaFabricacion")] Aeronave aeronave)
+        public async Task<IActionResult> Edit(int id, [Bind("AeronaveId,TipoAeronave,FechaFabricacion")] AeronaveEditlViewModel aeronaveView)
         {
-            if (id != aeronave.AeronaveId)
+            if (id != aeronaveView.AeronaveId)
             {
                 return NotFound();
             }
 
             if (ModelState.IsValid)
             {
+                var aeronave = new Aeronave{
+                    FechaFabricacion = aeronaveView.FechaFabricacion,
+                    TipoAeronave = aeronaveView.TipoAeronave,
+                };
                 try
                 {
-                    _context.Update(aeronave);
+                    _context.Update(aeronaveView);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!AeronaveExists(aeronave.AeronaveId))
+                    if (!AeronaveExists(aeronaveView.AeronaveId))
                     {
                         return NotFound();
                     }
@@ -129,7 +139,7 @@ namespace Test.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(aeronave);
+            return View(aeronaveView);
         }
 
         // GET: Aeronave/Delete/5
