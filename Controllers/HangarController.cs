@@ -38,9 +38,6 @@ namespace Test.Controllers
             return _context.Aeronave != null ?
             View(model):
             Problem("Entity set 'AeronaveContex.Aeronave' is null.");
-            // return _context.Hangar != null ? 
-            //             View(await _context.Hangar.ToListAsync()) :
-            //             Problem("Entity set 'AeronaveContext.Hangar'  is null.");
         }
 
         // GET: Hangar/Details/5
@@ -175,8 +172,14 @@ namespace Test.Controllers
             {
                 return NotFound();
             }
+            var viewModel = new HangarDeleteViewModel();
+            // viewModel.HangarId = hangar.HangarId;
+            viewModel.NombreHangar = hangar.NombreHangar;
+            viewModel.Sector = hangar.Sector;
+            viewModel.AptoMantenimiento = hangar.AptoMantenimiento;
+            viewModel.Aeronaves = hangar.Aeronaves;
 
-            return View(hangar);
+            return View(viewModel);
         }
 
         // POST: Hangar/Delete/5

@@ -172,9 +172,13 @@ namespace Test.Controllers
             {
                 return NotFound();
             }
+                var viewModel = new AeronaveDeleteViewModel();
+                    viewModel.FechaFabricacion = aeronave.FechaFabricacion;
+                    viewModel.TipoAeronave = aeronave.TipoAeronave;
 
-            return View(aeronave);
+            return View(viewModel);
         }
+
 
         // POST: Aeronave/Delete/5
         [HttpPost, ActionName("Delete")]
