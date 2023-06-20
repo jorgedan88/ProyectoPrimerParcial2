@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ProyectoPrimerParcial.ViewModels;
 
-public class AeronaveEditlViewModel{ 
+public class AeronaveEditViewModel{ 
 
         public int AeronaveId { get; set; }
 

@@ -1,4 +1,6 @@
-@model ProyectoPrimerParcial.Models.Aeronave
+@* @model ProyectoPrimerParcial.Models.Aeronave *@
+@using ProyectoPrimerParcial.ViewModels;
+@model AeronaveDetailViewModel;
 
 @{
     ViewData["Title"] = "Details";
@@ -22,18 +24,18 @@
             @Html.DisplayFor(model => model.FechaFabricacion)
         </dd>
     </dl>
-    <div>
+    @* <div>
         <ol>
             @foreach (var item in Model.Hangars)
             {
                 <li>@item.NombreHangar</li>
             }
         </ol>
-    </div>    
+    </div>     *@
 </div>
-<div>
+@* <div>
     <a asp-action="Edit" asp-route-id="@Model?.AeronaveId" class="btn btn-warning">Editar</a> 
-<br>
+<br> *@
 <br>
     <a asp-action="Index">Volver</a>
 </div>

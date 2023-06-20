@@ -29,10 +29,10 @@ namespace Test.Controllers
 
             if (!string.IsNullOrEmpty(nameFilterIns))
             {
-                query = query.Where(x => x.NombreInstructor.Contains(nameFilterIns));
+                query = query.Where(x => x.NombreInstructor.Contains(nameFilterIns) || x.Apellido.Contains(nameFilterIns) || x.DNI.ToString() == nameFilterIns);
             }
 
-            var model = new InstructorViewmodels();
+            var model = new InstructorIndexViewmodels();
             model.instructors =await query.ToListAsync();
             
             return _context.Aeronave != null ?
@@ -57,13 +57,22 @@ namespace Test.Controllers
                 return NotFound();
             }
 
-            return View(instructor);
+            var viewModel  = new InstructorDetailViewModel();
+                viewModel.NombreInstructor = instructor.NombreInstructor;
+                viewModel.Apellido = instructor.Apellido;
+                viewModel.DNI = instructor.DNI;
+                viewModel.TipoLicencia = instructor.TipoLicencia;
+                viewModel.NumeroLicencia = instructor.NumeroLicencia;
+                viewModel.FechaExpedicion = instructor.FechaExpedicion;
+                viewModel.EnActividad = instructor.EnActividad;
+                viewModel.Aeronave = instructor.Aeronave;
+
+            return View(viewModel);
         }
 
         // GET: Instructor/Create
         public IActionResult Create()
         {
-            ViewData["AeronaveId"] = new SelectList(_context.Aeronave, "AeronaveId", "TipoAeronave",  "instructor.AeronaveId");
             return View();
         }
 
@@ -84,14 +93,13 @@ namespace Test.Controllers
                     NumeroLicencia = instructorView.NumeroLicencia,
                     FechaExpedicion = instructorView.FechaExpedicion,
                     EnActividad = instructorView.EnActividad,
-                    AeronaveId = instructorView.AeronaveId
+                    Aeronave = instructorView.Aeronave
                     
                 };
                 _context.Add(instructor);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            // ViewData["AeronaveId"] = new SelectList(_context.Aeronave, "AeronaveId", "TipoAeronave",  "instructor.AeronaveId");
             return View(instructorView);
         }
 
@@ -108,8 +116,19 @@ namespace Test.Controllers
             {
                 return NotFound();
             }
-            ViewData["AeronaveId"] = new SelectList(_context.Aeronave, "AeronaveId", "TipoAeronave", instructor.AeronaveId);
-            return View(instructor);
+
+
+            var viewModel  = new InstructorEditViewModel();
+            viewModel.NombreInstructor = instructor.NombreInstructor;
+            viewModel.Apellido = instructor.Apellido;
+            viewModel.DNI = instructor.DNI;
+            viewModel.TipoLicencia = instructor.TipoLicencia;
+            viewModel.NumeroLicencia = instructor.NumeroLicencia;
+            viewModel.FechaExpedicion = instructor.FechaExpedicion;
+            viewModel.EnActividad = instructor.EnActividad;
+            viewModel.AeronaveId = instructor.AeronaveId;
+
+            return View(viewModel);
         }
 
         // POST: Instructor/Edit/5
