@@ -1,4 +1,4 @@
-using ProyectoPrimerParcial2.Utils;
+using ProyectoPrimerParcial.Utils;
 
 namespace ProyectoPrimerParcial.Models
 {

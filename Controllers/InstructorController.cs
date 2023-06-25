@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using ProyectoPrimerParcial.Data;
 using ProyectoPrimerParcial.Models;
 using ProyectoPrimerParcial.ViewModels;
-using ProyectoPrimerParcial2.ViewModels;
+
 
 
 namespace Test.Controllers
@@ -69,10 +69,10 @@ namespace Test.Controllers
 
             return View(viewModel);
         }
-
         // GET: Instructor/Create
         public IActionResult Create()
-        {
+        {//esta linea esta en la version sin ViewModels
+            ViewData["AeronaveId"] = new SelectList(_context.Aeronave, "AeronaveId", "TipoAeronave");
             return View();
         }
 
@@ -100,6 +100,7 @@ namespace Test.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["AeronaveId"] = new SelectList("AeronaveId", "TipoAeronave");
             return View(instructorView);
         }
 
@@ -128,6 +129,7 @@ namespace Test.Controllers
             viewModel.EnActividad = instructor.EnActividad;
             viewModel.AeronaveId = instructor.AeronaveId;
 
+            ViewData["AeronaveId"] = new SelectList(_context.Aeronave, "AeronaveId", "TipoAeronave");
             return View(viewModel);
         }
 
@@ -136,7 +138,7 @@ namespace Test.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("InstructorId,NombreInstructor,Apellido,DNI,TipoLicencia,NumeroLicencia,FechaExpedicion,EnActividad,AeronaveId")] Instructor instructor)
+        public async Task<IActionResult> Edit(int id, [Bind("InstructorId,NombreInstructor,Apellido,DNI,TipoLicencia,NumeroLicencia,FechaExpedicion,EnActividad")] Instructor instructor)
         {
             if (id != instructor.InstructorId)
             {
@@ -163,8 +165,18 @@ namespace Test.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AeronaveId"] = new SelectList(_context.Aeronave, "AeronaveId", "TipoAeronave", instructor.AeronaveId);
-            return View(instructor);
+            var viewModel  = new InstructorEditViewModel();
+            viewModel.NombreInstructor = instructor.NombreInstructor;
+            viewModel.Apellido = instructor.Apellido;
+            viewModel.DNI = instructor.DNI;
+            viewModel.TipoLicencia = instructor.TipoLicencia;
+            viewModel.NumeroLicencia = instructor.NumeroLicencia;
+            viewModel.FechaExpedicion = instructor.FechaExpedicion;
+            viewModel.EnActividad = instructor.EnActividad;
+            viewModel.AeronaveId = instructor.AeronaveId;
+
+            ViewData["AeronaveId"] = new SelectList(_context.Aeronave, "AeronaveId", "TipoAeronave",  "instructor.AeronaveId");
+            return View(viewModel);
         }
 
         // GET: Instructor/Delete/5
@@ -182,8 +194,17 @@ namespace Test.Controllers
             {
                 return NotFound();
             }
+            var viewModel  = new InstructorDeleteViewModel();
+            viewModel.NombreInstructor = instructor.NombreInstructor;
+            viewModel.Apellido = instructor.Apellido;
+            viewModel.DNI = instructor.DNI;
+            viewModel.TipoLicencia = instructor.TipoLicencia;
+            viewModel.NumeroLicencia = instructor.NumeroLicencia;
+            viewModel.FechaExpedicion = instructor.FechaExpedicion;
+            viewModel.EnActividad = instructor.EnActividad;
+            viewModel.Aeronave = instructor.Aeronave; 
 
-            return View(instructor);
+            return View(viewModel);
         }
 
         // POST: Instructor/Delete/5

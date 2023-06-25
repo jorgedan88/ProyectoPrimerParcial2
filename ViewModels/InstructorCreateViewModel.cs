@@ -1,6 +1,6 @@
 using ProyectoPrimerParcial.Models;
 using System.ComponentModel.DataAnnotations;
-using ProyectoPrimerParcial2.Utils;
+using ProyectoPrimerParcial.Utils;
 
 namespace ProyectoPrimerParcial.ViewModels;
 

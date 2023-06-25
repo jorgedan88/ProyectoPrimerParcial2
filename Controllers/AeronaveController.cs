@@ -8,7 +8,6 @@ using Microsoft.EntityFrameworkCore;
 using ProyectoPrimerParcial.Data;
 using ProyectoPrimerParcial.Models;
 using ProyectoPrimerParcial.ViewModels;
-using ProyectoPrimerParcial2.ViewModels;
 
 namespace Test.Controllers
 {
@@ -21,7 +20,7 @@ namespace Test.Controllers
             _context = context;
         }
 
-        // // GET: Aeronave
+        // GET: Aeronave
         // public async Task<IActionResult> Index(string nameFilter)
         public async Task<IActionResult> Index(string nameFilter ,[Bind("TipoAeronave,FechaFabricacion")] AeronaveCreateViewModel aeronaveView)
 

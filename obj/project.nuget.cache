@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AE7fcJwRnNkCQDMSiMihaDJMIlw3An6Q0s6L07jqaEVtYzSBS0hi3i9NU59pDL3/I1wBEh3BKSHtCNSrnyZWVw==",
+  "dgSpecHash": "J09rFz6bV50EFMj2hvtxI9DkHed7rsqBWLlp5y6jljAz39Xm0UsF0Qfo0DHmA8LnnOE6konh3PRWePHNTTNydg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\olive\\RepoIstea\\ProyectoPrimerParcial2\\Test.csproj",
+  "projectFilePath": "c:\\Users\\olive\\RepoIstea\\ProyectoPrimerParcial2\\Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\olive\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\olive\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\6.0.11\\microsoft.aspnetcore.razor.language.6.0.11.nupkg.sha512",

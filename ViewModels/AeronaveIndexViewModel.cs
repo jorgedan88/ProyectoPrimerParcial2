@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using ProyectoPrimerParcial.Models;
 using System.ComponentModel.DataAnnotations;
 
-namespace ProyectoPrimerParcial2.ViewModels;
+namespace ProyectoPrimerParcial.ViewModels;
 
 public class AeronaveIndexViewmodels
 
 {
     public List<Aeronave> aeronaves {get; set; } = new List<Aeronave>();
 
-    public String NameFilter { get; set; }
+    public String? NameFilter { get; set; }
     
         public int AeronaveId { get; set; }
         [Display(Name = "Fecha de fabricacion")]

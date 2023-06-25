@@ -1,6 +1,4 @@
-@* @model ProyectoPrimerParcial.Models.Instructor *@
-@using ProyectoPrimerParcial.ViewModels;
-@model InstructorDetailViewModel;
+@model ProyectoPrimerParcial.ViewModels.InstructorDetailViewModel;
 
 @{
     ViewData["Title"] = "Details";
@@ -54,11 +52,11 @@
             @Html.DisplayFor(model => model.EnActividad)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Aeronave.TipoAeronave)
+            @Html.DisplayNameFor(model => model.Aeronave)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Aeronave.TipoAeronave)
-    </dl>
+        </dl>
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.InstructorId" class="btn btn-warning">Editar</a>

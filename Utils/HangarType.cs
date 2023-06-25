@@ -1,4 +1,4 @@
-namespace ProyectoPrimerParcial2.Utils;
+namespace ProyectoPrimerParcial.Utils;
 
 public enum HangarType
 {

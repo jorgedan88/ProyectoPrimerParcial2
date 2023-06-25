@@ -1,6 +1,6 @@
 using ProyectoPrimerParcial.Models;
 using System.ComponentModel.DataAnnotations;
-using ProyectoPrimerParcial2.Utils;
+using ProyectoPrimerParcial.Utils;
 
 namespace ProyectoPrimerParcial.ViewModels;
 
@@ -20,5 +20,5 @@ public class HangarDeleteViewModel{
 
         [Display(Name = "Cuenta con oficinas?")]
         public bool oficinas {get;set;} = true;
-        public virtual List<Aeronave> Aeronaves { get; set; }
+        public virtual List<Aeronave>? Aeronaves { get; set; }
 }

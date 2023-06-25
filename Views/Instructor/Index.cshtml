@@ -1,5 +1,4 @@
-@using ProyectoPrimerParcial2.ViewModels;
-@model InstructorIndexViewmodels;
+@model ProyectoPrimerParcial.ViewModels.InstructorIndexViewmodels;
 
 @{
     ViewData["Title"] = "Index";
@@ -27,28 +26,28 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.instructors[0].NombreInstructor)
+                @Html.DisplayNameFor(model => model.NombreInstructor)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.instructors[0].Apellido)
+                @Html.DisplayNameFor(model => model.Apellido)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.instructors[0].DNI)
+                @Html.DisplayNameFor(model => model.DNI)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.instructors[0].TipoLicencia)
+                @Html.DisplayNameFor(model => model.TipoLicencia)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.instructors[0].NumeroLicencia)
+                @Html.DisplayNameFor(model => model.NumeroLicencia)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.instructors[0].FechaExpedicion)
+                @Html.DisplayNameFor(model => model.FechaExpedicion)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.instructors[0].EnActividad)
+                @Html.DisplayNameFor(model => model.EnActividad)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.instructors[0].Aeronave.TipoAeronave)
+                @Html.DisplayNameFor(model => model.Aeronave)
             </th>
             <th></th>
         </tr>

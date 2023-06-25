@@ -29,7 +29,7 @@ namespace Test.Migrations
 
                     b.HasIndex("HangarsHangarId");
 
-                    b.ToTable("AeronaveHangar", (string)null);
+                    b.ToTable("AeronaveHangar");
                 });
 
             modelBuilder.Entity("ProyectoPrimerParcial.Models.Aeronave", b =>
@@ -47,7 +47,7 @@ namespace Test.Migrations
 
                     b.HasKey("AeronaveId");
 
-                    b.ToTable("Aeronave", (string)null);
+                    b.ToTable("Aeronave");
                 });
 
             modelBuilder.Entity("ProyectoPrimerParcial.Models.Hangar", b =>
@@ -71,7 +71,7 @@ namespace Test.Migrations
 
                     b.HasKey("HangarId");
 
-                    b.ToTable("Hangar", (string)null);
+                    b.ToTable("Hangar");
                 });
 
             modelBuilder.Entity("ProyectoPrimerParcial.Models.Instructor", b =>
@@ -110,7 +110,7 @@ namespace Test.Migrations
 
                     b.HasIndex("AeronaveId");
 
-                    b.ToTable("Instructor", (string)null);
+                    b.ToTable("Instructor");
                 });
 
             modelBuilder.Entity("AeronaveHangar", b =>

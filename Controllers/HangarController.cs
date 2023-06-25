@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using ProyectoPrimerParcial.Data;
 using ProyectoPrimerParcial.Models;
 using ProyectoPrimerParcial.ViewModels;
-using ProyectoPrimerParcial2.ViewModels;
+
 
 namespace Test.Controllers
 {
@@ -29,7 +29,6 @@ namespace Test.Controllers
             if (!string.IsNullOrEmpty(nameFilterHan))
             {
                 query = query.Where(x => x.NombreHangar.Contains(nameFilterHan));
-                // query = query.Where(x => x.NombreHangar.Contains(nameFilterHan) || x.Sector.Contains(nameFilterHan));
             }
 
             var model = new HangarIndexViewmodel();
@@ -69,7 +68,7 @@ namespace Test.Controllers
         // GET: Hangar/Create
         public IActionResult Create()
         {
-            ViewData["Aeronaves"] = _context.Aeronave.ToList();
+                        ViewData["Aeronaves"] = new SelectList(_context.Aeronave, "AeronaveId", "TipoAeronave",  "instructor.AeronaveId");
             return View();
         }
 
@@ -110,6 +109,7 @@ namespace Test.Controllers
                 return NotFound();
             }
 
+
             var viewModel = new HangarEditViewModel();
             viewModel.HangarId = hangar.HangarId;
             viewModel.NombreHangar = hangar.NombreHangar;
@@ -117,7 +117,7 @@ namespace Test.Controllers
             viewModel.AptoMantenimiento = hangar.AptoMantenimiento;
             viewModel.Aeronaves = hangar.Aeronaves;
 
-
+            ViewData["Aeronaves"] = new SelectList(_context.Aeronave, "AeronaveId", "TipoAeronave",  "instructor.AeronaveId");
             return View(viewModel);
             // ViewData["Aeronaves"] = new SelectList(_context.Aeronave, "AeronaveId", "TipoAeronave",  "instructor.AeronaveId");
             // return View(hangar);
@@ -177,7 +177,7 @@ namespace Test.Controllers
             viewModel.NombreHangar = hangar.NombreHangar;
             viewModel.Sector = hangar.Sector;
             viewModel.AptoMantenimiento = hangar.AptoMantenimiento;
-            viewModel.Aeronaves = hangar.Aeronaves;
+            viewModel.Aeronave = hangar.Aeronave;
 
             return View(viewModel);
         }
@@ -203,7 +203,7 @@ namespace Test.Controllers
 
         private bool HangarExists(int id)
         {
-          return (_context.Hangar?.Any(e => e.HangarId == id)).GetValueOrDefault();
+            return (_context.Hangar?.Any(e => e.HangarId == id)).GetValueOrDefault();
         }
     }
 }

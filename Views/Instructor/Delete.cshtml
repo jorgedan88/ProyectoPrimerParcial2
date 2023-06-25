@@ -1,4 +1,4 @@
-@model ProyectoPrimerParcial.Models.Instructor
+@model ProyectoPrimerParcial.ViewModels.InstructorDeleteViewModel;
 
 @{
     ViewData["Title"] = "Delete";
@@ -56,10 +56,9 @@
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Aeronave)
         </dt>
-        <dd class = "col-sm-10">
+        <dl class = "col-sm-10">
             @Html.DisplayFor(model => model.Aeronave.TipoAeronave)
-        </dd>
-        </dd>
+        </dl>
     </dl>
     
     <form asp-action="Delete">
